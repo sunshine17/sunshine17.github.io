@@ -386,7 +386,7 @@ Request per second: | 346.62 | 232.75
 Time per request: | 2.885(ms) | 4.297(ms)
 
 
-## 性能报告图表
+# 性能报告图表
 自带的sapi benchmark:
 
 ![自带的sapi benchmark](https://raw.githubusercontent.com/sunshine17/sunshine17.github.io/master/images/synthetic-bench-2.jpg)
