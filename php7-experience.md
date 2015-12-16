@@ -42,11 +42,9 @@ echo $getX->call(new A);
 Generator是PHP5.5开始加入的特性，当时在Generator里不能有return语句，若要取得最后一个元素只能由调用者检查是否已取得最后一个元素。PHP7后，可以直接调用Generator::getReturn()来获取最后一个元素。例如:
 ```
 <?php
-
 $gen = (function() {
     yield 1;
     yield 2;
-
     return 3;
 })();
 
@@ -61,7 +59,7 @@ echo $gen->getReturn(), PHP_EOL;
 // 2
 // 3
 ```
-- 方便的委派(delegation)
+- 方便的委派(delegation): 
 可以在Generator里委派另一个Generator来生成数据，简单直接的写法：
 ```
 <?php
@@ -70,16 +68,13 @@ function gen() {
     yield 2;
     yield from gen2();
 }
-
 function gen2() {
     yield 3;
     yield 4;
 }
-
 foreach (gen() as $val) {
     echo $val, PHP_EOL;
 }
-
 // ===== OUTPUT =====
 // 1
 // 2
@@ -124,7 +119,6 @@ use const some\namespace\{ConstA, ConstB, ConstC};
 ```
 
 
-
 ## 引入静态类型语言的精粹
 - 函数参数类型声明(Scalar Type Hints)
 在函数参数前面声明参数类型，默认不强制检查参数类型，若传参类型与声明不匹配，解释器会自动转换类型而不报任何错误与警告。但你也可以启用严格模式(strict mode)，让解释器执行传参类型检查，若类型不匹配则抛出Fatal error: Uncaught TypeError。例如：
@@ -159,26 +153,21 @@ Fatal error: Uncaught TypeError: Return value of a() must be of the type boolean
 interface Logger {
     public function log(string $msg);
 }
-
 class Application {
     private $logger;
-
     public function getLogger(): Logger {
          return $this->logger;
     }
-
     public function setLogger(Logger $logger) {
          $this->logger = $logger;
     }
 }
-
 $app = new Application;
 $app->setLogger(new class implements Logger {
     public function log(string $msg) {
         echo $msg;
     }
 });
-
 var_dump($app->getLogger());
 ?>
 ```
@@ -353,10 +342,10 @@ ab -n 1000 -c 200 http://php5.batman.me/wordpress/
 - concurrency: 200
 
 ### RESULT
-                        php7 | php5
------------------------------|-----
-Request per second: | 327.85 | 258.34
-Time per request: | 2.75(ms) | 4.41(ms)
+指标|php7 | php5
+----|-----|----- 
+Request per second | 327.85 | 258.34
+Time per request | 2.75(ms) | 4.41(ms)
 
 
 ## ====== Round 2 ======
@@ -367,10 +356,10 @@ Time per request: | 2.75(ms) | 4.41(ms)
 - concurrency: 200
 
 ### RESULT
-                        php7 | php5
------------------------------|-----
-Request per second: | 354.15 | 266.66
-Time per request: | 2.824(ms) | 3.75(ms)
+指标|php7 | php5
+----|-----|----- 
+Request per second | 354.15 | 266.66
+Time per request | 2.824(ms) | 3.75(ms)
 
 
 ## ====== Round 3 ======
@@ -381,10 +370,10 @@ Time per request: | 2.824(ms) | 3.75(ms)
 - concurrency: 500
 
 ### RESULT
-                        php7 | php5
------------------------------|-----
-Request per second: | 346.62 | 232.75
-Time per request: | 2.885(ms) | 4.297(ms)
+指标|php7 | php5
+----|-----|----- 
+Request per second | 346.62 | 232.75
+Time per request | 2.885(ms) | 4.297(ms)
 
 
 # 性能报告图表
