@@ -4,6 +4,17 @@
 - 语法引入了时下主流的其它语言都有的特性，使开发效率得到明显的提升
 - 不兼容旧版本的地方不多，基本不会触碰到
 
+# 性能报告
+- 自带的sapi benchmark
+![自带的sapi benchmark](https://raw.githubusercontent.com/sunshine17/sunshine17.github.io/master/images/synthetic-bench-2.jpg)
+- 性能统计图
+![性能统计图](https://raw.githubusercontent.com/sunshine17/sunshine17.github.io/master/images/statistic.jpg)
+- ab测试1
+![ab测试1](https://raw.githubusercontent.com/sunshine17/sunshine17.github.io/master/images/ab-1.jpg)
+- ab测试2
+![ab测试2](https://raw.githubusercontent.com/sunshine17/sunshine17.github.io/master/images/ab-2.jpg)
+
+
 # 新特性
 
 ## 更简洁，更彻底的Closure -- Closure::call() 
@@ -243,11 +254,12 @@ PHP7使用了新的抽象语法树来解释源代码，这样可以提高了语�
 - 变量解释方向相反了
 非直接变量（变量、属性、方法）现在会严格地遵从“从左到右”的解释规则，而非以前的混合方式。 新旧两种间接表达式的解释方式对比: 
 ```
-Expression              PHP 5 interpretation    PHP 7 interpretation
-$$foo['bar']['baz']     ${$foo['bar']['baz']}   ($$foo)['bar']['baz']
-$foo->$bar['baz']       $foo->{$bar['baz']}     ($foo->$bar)['baz']
-$foo->$bar['baz']()     $foo->{$bar['baz']}()   ($foo->$bar)['baz']()
-Foo::$bar['baz']()      Foo::{$bar['baz']}()    (Foo::$bar)['baz']()
+Expression|PHP 5 interpretation|PHP 7 interpretation
+----------|----------
+$$foo['bar']['baz']  |   ${$foo['bar']['baz']}   | ($$foo)['bar']['baz']
+$foo->$bar['baz']     |   $foo->{$bar['baz']}     | ($foo->$bar)['baz']
+$foo->$bar['baz']()   |   $foo->{$bar['baz']}()  |  ($foo->$bar)['baz']()
+Foo::$bar['baz']()    |   Foo::{$bar['baz']}()   |  (Foo::$bar)['baz']()
 ```
 
 - list()的赋值顺序相反了
