@@ -369,9 +369,10 @@ ab -n 1000 -c 200 http://php5.batman.me/wordpress/
 - concurrency: 200
 
 ### RESULT
-                        php7        php5
-Request per second:     327.85      258.34
-Time per request:       2.75(ms)    4.41(ms)
+                        php7 | php5
+-----------------------------|-----
+Request per second: | 327.85 | 258.34
+Time per request: | 2.75(ms) | 4.41(ms)
 
 
 ## ====== Round 2 ======
@@ -382,9 +383,10 @@ Time per request:       2.75(ms)    4.41(ms)
 - concurrency: 200
 
 ### RESULT
-                        php7        php5
-Request per second:     354.15      266.66
-Time per request:       2.824(ms)   3.75(ms)
+                        php7 | php5
+-----------------------------|-----
+Request per second: | 354.15 | 266.66
+Time per request: | 2.824(ms) | 3.75(ms)
 
 
 ## ====== Round 3 ======
@@ -395,8 +397,9 @@ Time per request:       2.824(ms)   3.75(ms)
 - concurrency: 500
 
 ### RESULT
-                        php7        php5
-Request per second:     346.62      232.75
-Time per request:       2.885(ms)   4.297(ms)
+                        php7 | php5
+-----------------------------|-----
+Request per second: | 346.62 | 232.75
+Time per request: | 2.885(ms) | 4.297(ms)
 
 
