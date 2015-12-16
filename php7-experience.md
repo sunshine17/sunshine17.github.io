@@ -4,23 +4,6 @@
 - 语法引入了时下主流的其它语言都有的特性，使开发效率得到明显的提升
 - 不兼容旧版本的地方不多，基本不会触碰到
 
-# 性能报告
-自带的sapi benchmark:
-
-![自带的sapi benchmark](https://raw.githubusercontent.com/sunshine17/sunshine17.github.io/master/images/synthetic-bench-2.jpg)
-
-性能统计图:
-
-![性能统计图](https://raw.githubusercontent.com/sunshine17/sunshine17.github.io/master/images/statistic.jpg)
-
-ab测试1:
-
-![ab测试1](https://raw.githubusercontent.com/sunshine17/sunshine17.github.io/master/images/ab-1.jpg)
-
-ab测试2:
-
-![ab测试2](https://raw.githubusercontent.com/sunshine17/sunshine17.github.io/master/images/ab-2.jpg)
-
 
 # 新特性
 
@@ -355,7 +338,7 @@ yield ($foo or die);
 
 
 
-# Benchmark
+# Benchmark Detail
 用相同的ab参数： 
 ```
 ab -n 1000 -c 200 http://php5.batman.me/wordpress/ 
@@ -402,4 +385,21 @@ Time per request: | 2.824(ms) | 3.75(ms)
 Request per second: | 346.62 | 232.75
 Time per request: | 2.885(ms) | 4.297(ms)
 
+
+## 性能报告图表
+自带的sapi benchmark:
+
+![自带的sapi benchmark](https://raw.githubusercontent.com/sunshine17/sunshine17.github.io/master/images/synthetic-bench-2.jpg)
+
+性能统计图:
+
+![性能统计图](https://raw.githubusercontent.com/sunshine17/sunshine17.github.io/master/images/statistic.jpg)
+
+ab测试1:
+
+![ab测试1](https://raw.githubusercontent.com/sunshine17/sunshine17.github.io/master/images/ab-1.jpg)
+
+ab测试2:
+
+![ab测试2](https://raw.githubusercontent.com/sunshine17/sunshine17.github.io/master/images/ab-2.jpg)
 
