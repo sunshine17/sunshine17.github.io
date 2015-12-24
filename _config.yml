@@ -9,6 +9,14 @@ auto: false
 paginate: 8
 paginate_path: "page:num"
 
+# Site settings
+#title: 霹雳小金刚的博客
+#email: sunshine17.lin@gmail.com
+#baseurl: "" # the subpath of your site, e.g. /blog
+#url: "http://sunshine17.github.io" # the base hostname & protocol for your site
+#twitter_username: sun_shine_17
+#github_username:  sunshine17
+
 # presonal config
 domain: www.panxw.com
 title: Panxw's Blog
