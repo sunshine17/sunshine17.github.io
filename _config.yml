@@ -19,11 +19,11 @@ paginate_path: "page:num"
 
 # presonal config
 domain: www.panxw.com
-title: Panxw's Blog
-description: Android, Cocos2d, Java Web, Linux, reading...
-author: Steven Pan
-email: winfirm#163.com
-github: panxw
+title: sunshine17's Blog
+description: Architect, FP, Web, Linux, VIM,  reading...
+author: sunshine17
+email: sunshine17.lin#gmail.com
+github: sunshine17
 
 config:
   js_dir:
