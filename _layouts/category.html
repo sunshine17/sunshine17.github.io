@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="{{ page.title }} - {{ site.name }} - 作者:{{ site.author }}"/> 
-	{% if page.tags.size > 0%}<meta name="keywords" content="{% for tag in page.tags %}{% if tag != "" %}{{ tag }}{% if forloop.index != page.tags.size %},{% endif %}{% endif %}{% endfor %}"/>{% endif %}
-    <meta name="uyan_auth" content="4b63dd9621" />
-    <title> {{ page.title }} - {{ site.title }} </title>
+    <meta name="description" content="{{ page.title }} - {{ site.name }} - 作者:{{ site.author }}"/>
+    <title>{% for cat in site.all_categories %}{% if page.category == cat[0] %}分类：{{cat[1]}} - {{ site.name }}{% endif %}{% endfor %}</title>
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- Custom CSS -->
@@ -63,21 +60,39 @@
       <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-md-8">
-          {{ content }}
+			<!-- Navi -->
+			{% for cat in site.all_categories %}{% if page.category == cat[0] %}<a href="/">首页</a>&nbsp;>&nbsp;<a href="{{cat[2]}}">{{cat[1]}}</a>&nbsp;>&nbsp;列表{% endif %}{% endfor %}
+			<!-- List -->
+			<ul class="list-unstyled">
+			{% for post in site.categories[page.category] %}
+			  {% capture y %}{{post.date | date:"%Y"}}{% endcapture %}
+			  {% if year != y %}
+				{% assign year = y %}
+				<h2>{{ post.date | date: '%Y' }}</h2> 
+			  {% endif %}
+			  <li>
+				<h4><span>{{ post.date | date:"%Y-%m-%d" }}</span>&raquo;
+				<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h4>
+			  </li> 
+			{% endfor %}
+			</ul>
         </div>
         <!-- Blog Sidebar Widgets Column -->
         <div class="col-md-4">
           <!-- Blog Categories Well -->
           <div class="well">
             <h4>
-              分 类
+              分类
             </h4>
             <div class="row">
               {% include categories.html %} 
             </div>
             <!-- /.row -->
           </div>
-          <!-- Blog Links Well -->
+          <!-- Side Widget Well -->
+          <div class="well-ad">
+            {% include adsense.html %} 
+          </div>
 		  <!-- Blog Recent Well -->
           <div class="well">
             <h4>
@@ -90,8 +105,12 @@
         </div>
       </div>
       <!-- /.row -->
+
       <!-- Footer -->
       <footer>
+		<div style="text-align:center">
+			{% include adsense_728x90.html %} 
+		</div>
         <div class="row">
           <div class="col-lg-12">
             {% include copyright.html %} 
@@ -99,7 +118,6 @@
           <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-		{% include analytics.html %} 
       </footer>
     </div>
     <!-- /.container -->

@@ -6,9 +6,18 @@ highlighter: true
 safe: true
 #auto: false 
 gems: [jekyll-paginate]
+all_categories: [
+["pi", "Raspberry PI","/posts/pi.html"], 
+["web", "Web","/posts/web.html"], 
+["linux", "Linux","/posts/linux.html"],
+["read", "读书笔记","/posts/read.html"], 
+["other", "杂记","/posts/other.html"],
+["about", "关于","/about.html"]
+]
 
 paginate: 8
-paginate_path: "page:num"
+#paginate_path: "page:num"
+paginate_path: "posts/page:num"
 
 # presonal config
 domain: sunshine17.github.io
