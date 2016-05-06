@@ -1,6 +1,6 @@
 ---
 layout: post
-category: "raspberry pi"
+category: "pi"
 title:  "解決pi的unmet dependencies報錯"
 tags: [linux,pi]
 summary: "當apt的依賴被某個新裝的軟件包破壞時，無論你運行什麼簡單的系統工具，都會出現類似找不到lib或存在unmet dependencies之類的報錯"
