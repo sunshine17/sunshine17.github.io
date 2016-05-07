@@ -1,6 +1,6 @@
 markdown: redcarpet
 permalink: /:categories/:title.html
-url: 
+url: http://blog.4377.me
 lsi: false
 highlighter: true
 safe: true
