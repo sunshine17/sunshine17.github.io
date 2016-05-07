@@ -5,7 +5,7 @@ title:  "owncloud的nginx配置"
 tags: [pi,owncloud]
 summary: "owncloud最新版的官方安裝文檔是针对LAMP的，没有对nginx环境的安装说明，但owncloud8的文档里有提及到，这里记录一下，以方便查阅。"
 ---
-其實owncloud是一个PHP应用，可以很容易地部署在任何一个web服務器中，根本就沒必要通過apt安裝。但owncloud9的官方文檔只有apache的配置文件，這對於很多使用nginx的开发者来说不直观。于是我Google了一下，发现owncloud8的文檔裏竟然就有nginx配置：
+其實owncloud是一个PHP应用，可以很容易地部署在任何一个web服務器中，根本就沒必要通過apt安裝。但owncloud9囉嗦的官方文檔及源代碼只有apache的配置說明，這對於很多使用nginx的开发者来说不直观。我細心地找了很久，終於發現官網把nginx配置放到了[github的wiki](https://github.com/owncloud/documentation/wiki/NGINX-Configuration)上。這個對於習慣nginx環境的開發者來說，其實是很重要的一個說明，於是我將其摘錄下來：
 
 ```
 
