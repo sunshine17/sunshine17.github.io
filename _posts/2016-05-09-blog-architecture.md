@@ -30,7 +30,7 @@ summary: "这个博客是纯静态网站，原本想使用github pages的服务�
 
 ##架構圖
 一圖勝千言，先上圖。<br/>
-<img src="/images/blog_architecture.png" width="800"/>
+<img src="/images/blog_architecture.png" />
 
 
 ### 角色說明
