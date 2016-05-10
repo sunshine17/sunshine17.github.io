@@ -1,7 +1,7 @@
 permalink: /:categories/:title.html
 url: http://blog.4377.me
 lsi: false
-highlighter: true
+highlighter: rouge
 safe: true
 #auto: false 
 gems: [jekyll-paginate]
