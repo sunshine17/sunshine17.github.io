@@ -38,7 +38,7 @@ summary: "这个博客是纯静态网站，原本想使用github pages的服务�
 - **Nginx**: web服務器，提供靜態文件訪問服務，只需把Jekyll build的結果目錄_site配置為nginx的document root即可
 - **Jekyll**: static site generator，開啟--watch選項，設為後臺進程來監聽文件變化，當有文章更新時會即時build一次
 - **SiteFolder**: Jekyll build的輸出目錄，默認設置為你repository的_site文件夾，例如sunshine17.github.io/_site/, 需把此文件夾加入git的ignore列表
-- **Git Repository**: 在VPS上的博客源代碼倉庫，下一篇我會討論自動同步Github更新的策略
+- **Git Repository**: 在VPS上的博客源代碼倉庫，**下一篇我會討論自動同步Github更新的策略**
 - **github.io**: github上的git服務器，充當版本控制的中心服務器，VPS上的repository會pull這個git server，你在任何電腦上寫完文章也是push到這個git server
 
 
