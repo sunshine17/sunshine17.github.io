@@ -1,7 +1,7 @@
 ---
 layout: post
 category: "web"
-title:  "Github鐿象(VPS)自動更新方案"
+title:  "【本博客架構】Github鐿象(VPS)自動更新方案"
 tags: [blog,github pages,git webhook]
 summary: "這個博客是部署在VPS上的，而寫文章時，我們通常只會把本地的commit push到github上，本文討論VPS上的repository與github的即時同步策略，以及分享下我在解決此問題時的思路"
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 category: "web"
-title:  "本博客的架构"
+title:  "【本博客架构】概要"
 tags: [blog,jekyll,github pages]
 summary: "这个博客是纯静态网站，原本想使用github pages的服务，后来发现git的所有服务都撞墙了，只好将其放在VPS上。本文记录一下我在vps上使用nginx + jekyll + github搭建个人静态博客的方法。"
 ---
