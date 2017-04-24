@@ -18,5 +18,12 @@ http://sunshine17.github.io, 支持PC与智能机访问。
 3,Google 的Adsense广告，官网：https://www.google.com/adsense/login/zh_CN  
 如需查看或管理网站统计、评论或广告，请自行注册帐号并修改_includes目录下相关文件。  
 
+####开发环境
+1. 这里用到的jekyll版本是2.4.0
+sudo gem install jekyll -v 2.4.0
+
+2. 启动jekyll
+jekyll _2.4_ build --watch
+
 ####联系作者
 **^_^*随喜Star一下本项目吧，谢谢~  

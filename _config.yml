@@ -14,6 +14,10 @@ all_categories: [
 ["about", "关于","/about.html"]
 ]
 
+markdown: kramdown
+kramdown:
+      input: GFM
+
 paginate: 8
 #paginate_path: "page:num"
 paginate_path: "posts/page:num"
