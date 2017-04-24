@@ -1,8 +1,8 @@
 ---
 layout: post
-category: "web"
+category: "php"
 title:  "安裝PHP7"
-tags: [php7,web]
+tags: [php,web]
 summary: "php7的安裝記錄"
 ---
 PHP7的性能號稱是5.x的3倍以上，是一個值得嘗試的大版本更新，但常用的擴展目前還沒有更新到pecl/pear中，故本文記錄一下安裝的步驟（以debian系列示例）。
