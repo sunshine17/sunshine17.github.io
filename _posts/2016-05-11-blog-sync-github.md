@@ -1,10 +1,12 @@
 ---
 layout: post
 category: "web"
-title:  "【本博客架構】Github鐿象(VPS)自動更新方案"
+title:  "博客Github鐿象(VPS)自動更新方案"
 tags: [blog,github pages,git webhook]
 summary: "這個博客是部署在VPS上的，而寫文章時，我們通常只會把本地的commit push到github上，本文討論VPS上的repository與github的即時同步策略，以及分享下我在解決此問題時的思路"
 ---
+（2017-04-26更新【方案4】）
+
 這個博客是部署在VPS上的，但我并没有在VPS上部署git server，VPS上只是一个git repository(即Github的鐿象)。Github在本博的架构里是作为中心仓库的角色存在的，在寫文章時，只需把本地的commit push到Github上。 
 
 但这样数据同步的问题就来了：
@@ -82,12 +84,21 @@ git pull
 可惜的是，查了一下IFTTT上的Github Channel，貌似沒有git push的觸發條件，只好作罷。
 其實IFTTT的方案本質也是一樣，只是IFTTT充當了觸發器的角色（Webhooks）。
 
+## **方案4**
+**使用Teamcity之类的CI(Continuous Integration)服务**。
+
+方案2有个缺陷：需要使用php调用shell脚本，这有一定安全隐患，以及需要部署多一个PHP服务。
+于是，我想到了成熟团队都可能用到的Teamcity。简单方案如下：
+
+- 在vps上部署Teamcity。
+- Teamcity中配置一个project，直接从github摘取你的博客，
+- project下新建build step(只有一个step即可)，选择类型为command line, 具体命令如下：
+```shell
+cd /home/your_blog_repo_dir
+git pull
+```
+- 新建vcs trigger, add rule，在comment里直接用通配符*，这样就可以当有任何comment的push发生时，自动触发teamcity的build任务
 
 ## **總結**
-一開始，我想到最簡單的辦法是【方案1】，可以順便試用一下Git提供的Webhooks。但後來我選擇了【方案2】, 原因如下：
-
-1. 目前的需求只是一個博客鐿象同步，鐿象也只有一個VPS，方案2在能實現的基礎上會更簡單
-2. 暫時未想到要如何運用Webhooks在實際項目中，根據我的按需而學原則，未用得著又沒興趣深入的，不學
-3. 博客的重點不是技術，而是內容，只要能實現功能就足夠了，更多的時間應該花在其他更有價值的技術研究上
-
+最后，我选择的是【方案4】。原因是我的VPS要用到teamcity，既然已经用到它了，干脆就物尽其用，总比方案2的php+shell更安全可靠。
 
