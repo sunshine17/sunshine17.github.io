@@ -81,3 +81,8 @@ angular.module('app', [
 ionic serve --livereload --consolelogs
 ```
 
+## Talk is cheap, show you the code now
+一个todo的APP，用ionic creator做的界面，然后export，再加上native storage支持：
+[C-Todo App](https://github.com/sunshine17/c-todo "c-todo app")
+
+
