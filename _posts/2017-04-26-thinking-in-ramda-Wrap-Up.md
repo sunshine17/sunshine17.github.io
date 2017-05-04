@@ -1,13 +1,13 @@
 ---
 layout: post
 category: "thinking_in_ramda"
-title:  "[翻译]Ramda程序思想：开篇"
+title:  "[翻译]Ramda思维：开篇"
 tags: [nodejs,functional programming]
 summary: "这是一个关于函数式编程的系列文章，使用nodejs的ramda库来讲解如何在nodejs这门目前最流行的语言实现函数式编程的理念。"
 ---
 
 >
-译者注：这是一个关于函数式编程的系列文章，主要讨论如何用nodejs这门目前最流行的语言通过使用函数式编程的理念来写出高可读性、健壮而简洁的程序代码。
+这是一个关于函数式编程的系列文章，主要讨论如何用nodejs这门目前最流行的语言通过使用函数式编程的理念来写出高可读性、健壮而简洁的程序代码。
 
 **\([英文原文链接在此](http://randycoulman.com/blog/2016/05/24/thinking-in-ramda-getting-started/ "英文原文链接在此")\)**
 
@@ -190,48 +190,7 @@ reduce(add, 5, [1, 2, 3, 4]) // --> 15
 
 ## **接下来**
 
-这个系列的下一篇，[组合你的函数](/thinking_in_ramda/combining_functions.html)，会介绍我们可以如何更进一步及开始用崭新及有趣的方法把多个函数组合成一个。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+这个系列的下一篇，[组合函数的魔法](/thinking_in_ramda/thinking-in-ramda-combining-functions.html)，会介绍我们可以如何更进一步及开始用崭新及有趣的方法把多个函数组合成一个。
 
 
 
