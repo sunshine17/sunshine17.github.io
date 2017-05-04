@@ -24,9 +24,9 @@ paginate_path: "posts/page:num"
 
 # presonal config
 domain: blog.4377.me
-title: sunshine17的博客
+title: It's not who I am underneath but what I do that defines me
 description: Architect, FP, Web, Linux, VIM,  reading...
-author: sunshine17.lin
+author: Batman.lx
 email: sunshine17.lin#gmail.com
 github: sunshine17
 
