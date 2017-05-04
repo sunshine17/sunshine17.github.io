@@ -50,6 +50,7 @@ sudo apt-get install -y libmcrypt-dev libcurl4-openssl-dev
 If any error happens, check error message to see missing what, then use 'sudo apt-get install -y [pkg]-dev' to install the missing one.
 
 ## **安装扩展**
+
 ```shell
 sudo apt-get update
 sudo apt-get install build-essential libmemcached-dev
