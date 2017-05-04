@@ -1,7 +1,7 @@
 ---
 layout: post
 category: "thinking_in_ramda"
-title:  "[翻译]Ramda思维：开篇"
+title:  "Ramda思维：开篇"
 tags: [nodejs,functional programming]
 summary: "这是一个关于函数式编程的系列文章，使用nodejs的ramda库来讲解如何在nodejs这门目前最流行的语言实现函数式编程的理念。"
 ---
