@@ -194,5 +194,5 @@ const operate = compose(square, addOne, multiply)
 
 也许你已经注意到，我们在组合函数时会忽略被组合函数的参数。只有当最终调用组合后的函数时，我们才会传入所需的参数。
 
-这在函数式编程中是很常见的事，我在下一篇：[部分应用函数](/thinking_in_ramda/thinking-in-ramda-partial-application.html)中会详细介绍这一点。
+这在函数式编程中是很常见的事，我在下一篇：[部分应用函数](/thinking_in_ramda/thinking-in-ramda-Partial-Application.html)中会详细介绍这一点。
 
