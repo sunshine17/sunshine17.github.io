@@ -102,6 +102,49 @@ First argument to _arity must be a non-negative integer no greater than ten
 
 ## **CURRY**
 
+到处使用`partial`或`partialRight`会令出现大量重复又无聊的代码。但同样把多参函数拆成一个系列的单参函数再调用也极为笨拙。
 
+幸好，Ramda提供了一个解决方案：`Curry`。
 
+[Currying](https://en.wikipedia.org/wiki/Currying)是函数式编程领域里的一个核心概念。技术上讲，一个Curry化后的函数永远都是一组单参函数，这就是刚才我说的笨拙的地方。在纯粹的函数式语言中，语法上看Curry化函数与调用多参函数其实并无区别。
+
+但Ramda是一个JavaScript的库，而JavaScript这种语言并没有很优雅的语法去描述如何调用一组单参函数，Ramda的作者们也没有按传统的currying定义去实现。
+
+在Ramda里，一个Curry化的函数在被调用时，传参只能传它所需参数的一个子集，它会返回一个能接受剩余未传参数的函数。当你以全部参数调用Curry化的函数时，它会直接调用底层的函数。
+
+你可以认为Curry化的函数集两个优点于一身：你能把它当普通函数一样用全部参数直接调用，结果就与普通函数完全一样，返回函数的值；又或者你调用它时只传一部分参数，这样它返回的就是一个部分应用的函数，就如上面的`partial`。
+
+需要注意的是这种灵活性会牺牲一点性能，因为`curry`需要计算出底层函数是如何被调用的，然后决定如何实现底层函数的调用。我通常的做法是只curry化那些需要多个地方使用`partial`的函数。
+
+现在我们回头看看使用`curry`后之前的`publishedInYear`会变成怎样。注意使用`curry`的效果就如同你调用`partial`，但没有`partialRight`的`curry`版本。以后我会更深入地探讨这个，现在，我们需要反转`publishedInYear`的参数顺序来让年份成为第一个参数。
+
+```javascript
+const publishedInYear = curry((year, book) => book.year === year)
+ 
+const titlesForYear = (books, year) => {
+  const selected = filter(publishedInYear(year), books)
+ 
+  return map(book => book.title, selected)
+}
+```
+
+这次我们可以只用年份参数去调用`publishedInYear`，从而得到一个单参函数，这个新函数只有一个参数book，当你用book去调用它时，它会执行原来的底层函数并返回结果。当时，我们依然可以直接按原来的方式`publishedInYear(2012, book)`调用它，而无需用之前那个`)(`的难看语法，这样就兼容了两种情况。
+
+## **参数顺序**
+
+注意，为了让`curry`符合我们的调用方式，我们需要反转参数顺序。这在函数式编程里是很常见的做法，所以，几乎所有的Ramda函数都是把要操作的数据放在最后一个参数。
+
+你可以把函数签名中靠前面的参数看成是这个函数操作的配置数据。例如`publishedInYear`函数，`year`参数就是这个操作的"配置"（那`year`参数是什么呢？），然后`book`参数就是要操作的数据(问题是这个数据去哪了？)。
+
+我们已见识过使用集合迭代函数来实现curry化的例子，集合迭代函数都把要操作的集合放在最后一个参数里，因为这样可以使实现函数式编程风格变得更容易。
+
+## **错误的参数顺序**
+
+如果我们没有反转`publishedInYear`函数的参数顺序，那会怎样呢？那如何继续利用curry化的优势？
+
+Ramda提供了一些选择。
+
+### **FLIP**
+
+第一个选择是`flip`函数。`flip`接受一个有2个参数以上的函数，然后返回一个新函数，新函数接受与原函数同样多的参数，只是参数的顺序相反了。
 
