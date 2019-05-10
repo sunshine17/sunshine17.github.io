@@ -29,7 +29,7 @@ summary: "这个博客是纯静态网站，原本想使用github pages的服务�
 - 只需要web服務器，低功耗
 - vim的高效文字編輯 + markdown語法描述排版，可謂兼顧效率與美觀 
 - git做version controll，打tag、出release，簡直就是強大的出版器
-- 大道至簡：everything is done on my keyboard, no more mouse
+- 大道至簡：everything is done on my keyboard
 
 ## 架構圖
 
