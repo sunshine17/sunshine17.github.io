@@ -1,1 +1,37 @@
 baseurl: /
+permalink: /:categories/:title.html
+url: http://blog.4377.me
+lsi: false
+highlighter: rouge
+safe: true
+#auto: false 
+gems: [jekyll-paginate]
+all_categories: [
+["pi", "Raspberry PI","/posts/pi.html"], 
+["web", "Web","/posts/web.html"], 
+["linux", "Linux","/posts/linux.html"],
+["read", "读书笔记","/posts/read.html"], 
+["other", "杂记","/posts/other.html"],
+["about", "关于","/about.html"]
+]
+
+markdown: kramdown
+kramdown:
+      input: GFM
+
+paginate: 8
+#paginate_path: "page:num"
+paginate_path: "posts/page:num"
+
+# presonal config
+domain: blog.4377.me
+title: It's not who I am underneath but what I do that defines me
+description: Architect, FP, Web, Linux, VIM,  reading...
+author: Batman.lx
+email: sunshine17.lin#gmail.com
+github: sunshine17
+
+config:
+  js_dir:
+  img_dir:
+  css_dir:
